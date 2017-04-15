@@ -1,10 +1,5 @@
-import org.apache.commons.csv.CSVFormat
-import org.apache.commons.csv.CSVParser
-import org.apache.commons.csv.CSVRecord
-import java.io.BufferedReader
-import java.io.File
-import java.io.FileReader
-import java.io.InputStreamReader
+import java.util.*
+import kotlin.collections.ArrayList
 
 /**
  * Created by tieorange on 10/04/2017.
@@ -16,22 +11,22 @@ class Main() {
 
         @JvmStatic fun main(args: Array<String>) {
 
-            val weights = doubleArrayOf(
+            val weights = listOf<Double>(
                     -0.1,
                     0.20653640140000007,
                     -0.23418117710000003)
 
-            val dataSet = arrayOf(
-                    doubleArrayOf(2.7810836, 2.550537003, 0.0),
-                    doubleArrayOf(1.465489372, 2.362125076, 0.0),
-                    doubleArrayOf(3.396561688, 4.400293529, 0.0),
-                    doubleArrayOf(1.38807019, 1.850220317, 0.0),
-                    doubleArrayOf(3.06407232, 3.005305973, 0.0),
-                    doubleArrayOf(7.627531214, 2.759262235, 1.0),
-                    doubleArrayOf(5.332441248, 2.088626775, 1.0),
-                    doubleArrayOf(6.922596716, 1.77106367, 1.0),
-                    doubleArrayOf(8.675418651, -0.242068655, 1.0),
-                    doubleArrayOf(7.673756466, 3.508563011, 1.0)
+            val dataSet = listOf<List<Double>>(
+                    listOf(2.7810836, 2.550537003, 0.0),
+                    listOf(1.465489372, 2.362125076, 0.0),
+                    listOf(3.396561688, 4.400293529, 0.0),
+                    listOf(1.38807019, 1.850220317, 0.0),
+                    listOf(3.06407232, 3.005305973, 0.0),
+                    listOf(7.627531214, 2.759262235, 1.0),
+                    listOf(5.332441248, 2.088626775, 1.0),
+                    listOf(6.922596716, 1.77106367, 1.0),
+                    listOf(8.675418651, -0.242068655, 1.0),
+                    listOf(7.673756466, 3.508563011, 1.0)
             )
 
             for (row in dataSet) {
@@ -45,43 +40,53 @@ class Main() {
             val weightsResult = trainWeights(dataSet, learningRate, nEpoch)
             printWeights(weightsResult)
 
-//            load_csv("")
-            val csvResult = CsvReader.read("iris_perceptron/training.txt")
-            val classMap = csvResult.classMap
-            val data = csvResult.data
-
+            val list: List<List<Double>> = CsvReader.myRead(PATH_TRAINING)
         }
 
-        fun load_csv(fileName: String) {
-            val csvParser: CSVParser = CSVParser(
-                    FileReader("iris_perceptron/training.txt"),
-                    CSVFormat.DEFAULT)
-
-            for (csvRecord: CSVRecord in csvParser) {
-                print(csvRecord[0])
+        fun perceptron(
+                train: List<List<Double>>, test: List<List<Double>>,
+                learningRate: Double, nEpoch: Int
+        ): ArrayList<Double> {
+            val predictions = ArrayList<Double>()
+            val weights = trainWeights(train, learningRate, nEpoch)
+            for (row in test) {
+                val prediction: Double = predict(row, weights)
+                predictions.add(prediction)
             }
-
+            return predictions
         }
 
-        private fun getTrainingSet(): String {
-            val input = File("iris_perceptron/training.txt").inputStream()
-            val reader = BufferedReader(InputStreamReader(input))
-            val results = StringBuilder()
-            try {
-                while (true) {
-                    val line = reader.readLine()
-                    if (line == null) break
-                    results.append(line)
+        fun evaluateAlgorithm(dataSet: List<List<Double>>, nFolds: Int) {
+            val folds = crossValidationSplit(dataSet, nFolds)
+            val scores = ArrayList<Double>()
+            for (fold in folds) {
+                val trainingSet = ArrayList<List<Double>>(folds)
+                trainingSet.remove(fold)
+                val trainingSetSum = trainingSet
+                // trainingSet = trainingSet.sum() todo: uncomment
+                for (row in fold) {
+
                 }
-            } finally {
-                reader.close()
             }
-            return results.toString()
         }
 
+        fun crossValidationSplit(dataSet: List<List<Double>>, nFolds: Int): ArrayList<List<Double>> {
+            val dataSetSplit = ArrayList<List<Double>>()
+            val dataSetCopy = ArrayList<List<Double>>(dataSet)
+            val fold_size = (dataSet.size / nFolds)
+            for (i in 0..nFolds) {
+                val fold = ArrayList<List<Double>>()
+                while (fold.size < fold_size) {
+                    val index = Random().nextInt(dataSetCopy.size)
+                    fold.add(dataSetCopy[index])
+                }
+                dataSetSplit.addAll(fold)
+            }
+            return dataSetSplit
+        }
 
-        private fun trainWeights(train: Array<DoubleArray>, learningRate: Double, nEpoch: Int): DoubleArray {
-            val weights = DoubleArray(train[0].size) // TODO: find how to init array(size = 3)
+        private fun trainWeights(train: List<List<Double>>, learningRate: Double, nEpoch: Int): List<Double> {
+            val weights = ArrayList<Double>(train[0].size) // TODO: find how to init array(size = 3)
             for (epoch in 0..nEpoch) {
                 var sumError = 0.0
                 var error = 0.0
@@ -95,14 +100,12 @@ class Main() {
                 }
                 println(">epoch = $epoch, lRate = $learningRate, error = $sumError")
             }
-            return weights
+            return weights.toList()
         }
 
-        fun printWeights(weights: DoubleArray) {
-            weights.forEach { print("$it, ") }
-        }
+        fun printWeights(weights: List<Double>) = weights.forEach { print("$it, ") }
 
-        fun predict(row: DoubleArray, weights: DoubleArray): Double {
+        fun predict(row: List<Double>, weights: List<Double>): Double {
             var activation: Double = weights.first()
             for (i in 0..(row.size - 2)) {
                 activation += weights[i + 1] * row[i]

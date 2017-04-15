@@ -24,7 +24,7 @@ object CsvReader {
                 try {
                     val
 
-                    classToUse : Double = classMap.getOrPut(split.last(), {
+                            classToUse: Double = classMap.getOrPut(split.last(), {
                         val nextClassIndexToInsert = nextClassIndex
 
                         nextClassIndex++
@@ -32,7 +32,7 @@ object CsvReader {
                         nextClassIndexToInsert
                     })
 
-                    val pair: Pair<List<Double>, List<Double>> = split.subList(0, split.size - 1).map<String, Double>(transform = String::toDouble) to listOf(classToUse)
+                    val pair: Pair<List<Double>, List<Double>> = split.subList(0, split.size - 1).map<String, Double>(transform = String::toDouble).to(listOf(classToUse))
                     pair
                 } catch (exception: NumberFormatException) {
                     null
@@ -43,13 +43,14 @@ object CsvReader {
         return CsvResult(data, classMap.invert())
     }
 
-    fun myRead(filename: String) {
+    fun myRead(filename: String): List<List<Double>> {
         val inputStream = File(filename).inputStream()
         val bufferedReader = BufferedReader(InputStreamReader(inputStream))
-        bufferedReader.readLines().map { line ->
-            val map: List<String> = line.split(",").map(String::trim)
-
+        val data: List<List<Double>> = bufferedReader.readLines().map { line ->
+            val columnsList: List<String> = line.split(",").map(String::trim)
+            columnsList.subList(0, columnsList.size - 1).map(String::toDouble)
         }
+        return data
     }
 
     class CsvResult(val data: List<Pair<List<Double>, List<Double>>>, val classMap: Map<Double, String>) {
