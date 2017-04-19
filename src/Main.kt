@@ -8,6 +8,7 @@ class Main() {
 
     companion object {
         private val PATH_TRAINING = "iris_perceptron/training.txt"
+        private val PATH_TEST = "iris_perceptron/test.txt"
 
         @JvmStatic fun main(args: Array<String>) {
 
@@ -40,14 +41,22 @@ class Main() {
              val weightsResult = trainWeights(dataSet, learningRate, nEpoch)
              printWeights(weightsResult)
  */
-            val list: List<List<Double>> = CsvReader.myRead(PATH_TRAINING)
-
-
+            val trainingSet: List<List<Double>> = CsvReader.myRead(PATH_TRAINING)
+            val testSet = CsvReader.myRead(PATH_TEST)
+            val learningRate: Double = 0.1
+            val nEpoch = 5
+            val predicted = perceptron(trainingSet, testSet, learningRate, nEpoch)
+            printWeights(predicted)
         }
 
         fun accuracyMetric(actual: List<Double>,
-                           predicted: List<Double>) {
-
+                           predicted: List<Double>): Float {
+            var correct: Int = 0
+            actual.forEachIndexed { index, item ->
+                if (item == predicted[index])
+                    correct++
+            }
+            return correct / actual.size.toFloat() * 100.0f
         }
 
         fun perceptron(train: List<List<Double>>,
@@ -98,14 +107,18 @@ class Main() {
         private fun trainWeights(train: List<List<Double>>,
                                  learningRate: Double,
                                  nEpoch: Int): List<Double> {
-            val weights = ArrayList<Double>(train[0].size) // TODO: find how to init array(size = 3)
+            val weights = ArrayList<Double>() // TODO: find how to init array(size = 3)
+            (0..train[0].size - 1).forEach {
+                weights.add(0.0)
+            }
+
             for (epoch in 0..nEpoch) {
                 var sumError = 0.0
                 var error = 0.0
                 for (row in train) {
                     val prediction = predict(row, weights)
                     error = row.last() - prediction
-                    sumError += Math.pow(error, 2.0)
+                    //                    sumError += Math.pow(error, 2.0)
                     weights[0] = weights[0] + learningRate * error
                     for (i in 0..(row.size - 2))
                         weights[i + 1] = weights[i + 1] + learningRate * error * row[i]
