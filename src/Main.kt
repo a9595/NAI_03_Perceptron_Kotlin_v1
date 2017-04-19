@@ -11,41 +11,49 @@ class Main() {
 
         @JvmStatic fun main(args: Array<String>) {
 
-            val weights = listOf<Double>(
-                    -0.1,
-                    0.20653640140000007,
-                    -0.23418117710000003)
+            /* val weights = listOf<Double>(
+                     -0.1,
+                     0.20653640140000007,
+                     -0.23418117710000003)
 
-            val dataSet = listOf<List<Double>>(
-                    listOf(2.7810836, 2.550537003, 0.0),
-                    listOf(1.465489372, 2.362125076, 0.0),
-                    listOf(3.396561688, 4.400293529, 0.0),
-                    listOf(1.38807019, 1.850220317, 0.0),
-                    listOf(3.06407232, 3.005305973, 0.0),
-                    listOf(7.627531214, 2.759262235, 1.0),
-                    listOf(5.332441248, 2.088626775, 1.0),
-                    listOf(6.922596716, 1.77106367, 1.0),
-                    listOf(8.675418651, -0.242068655, 1.0),
-                    listOf(7.673756466, 3.508563011, 1.0)
-            )
+             val dataSet = listOf<List<Double>>(
+                     listOf(2.7810836, 2.550537003, 0.0),
+                     listOf(1.465489372, 2.362125076, 0.0),
+                     listOf(3.396561688, 4.400293529, 0.0),
+                     listOf(1.38807019, 1.850220317, 0.0),
+                     listOf(3.06407232, 3.005305973, 0.0),
+                     listOf(7.627531214, 2.759262235, 1.0),
+                     listOf(5.332441248, 2.088626775, 1.0),
+                     listOf(6.922596716, 1.77106367, 1.0),
+                     listOf(8.675418651, -0.242068655, 1.0),
+                     listOf(7.673756466, 3.508563011, 1.0)
+             )
 
-            for (row in dataSet) {
-                val prediction = predict(row, weights)
-                println("Expected = ${row.last()}, \t Predicted = $prediction ")
-            }
+             for (row in dataSet) {
+                 val prediction = predict(row, weights)
+                 println("Expected = ${row.last()}, \t Predicted = $prediction ")
+             }
 
 
-            val learningRate: Double = 0.1
-            val nEpoch = 5
-            val weightsResult = trainWeights(dataSet, learningRate, nEpoch)
-            printWeights(weightsResult)
-
+             val learningRate: Double = 0.1
+             val nEpoch = 5
+             val weightsResult = trainWeights(dataSet, learningRate, nEpoch)
+             printWeights(weightsResult)
+ */
             val list: List<List<Double>> = CsvReader.myRead(PATH_TRAINING)
+
+
         }
 
-        fun perceptron(
-                train: List<List<Double>>, test: List<List<Double>>,
-                learningRate: Double, nEpoch: Int
+        fun accuracyMetric(actual: List<Double>,
+                           predicted: List<Double>) {
+
+        }
+
+        fun perceptron(train: List<List<Double>>,
+                       test: List<List<Double>>,
+                       learningRate: Double,
+                       nEpoch: Int
         ): ArrayList<Double> {
             val predictions = ArrayList<Double>()
             val weights = trainWeights(train, learningRate, nEpoch)
@@ -56,21 +64,23 @@ class Main() {
             return predictions
         }
 
-        fun evaluateAlgorithm(dataSet: List<List<Double>>, nFolds: Int) {
+        fun evaluateAlgorithm(dataSet: List<List<Double>>,
+                              nFolds: Int) {
             val folds = crossValidationSplit(dataSet, nFolds)
             val scores = ArrayList<Double>()
-            for (fold in folds) {
+            for (fold: List<Double> in folds) {
                 val trainingSet = ArrayList<List<Double>>(folds)
                 trainingSet.remove(fold)
                 val trainingSetSum = trainingSet
                 // trainingSet = trainingSet.sum() todo: uncomment
-                for (row in fold) {
-
+                for (row: Double in fold) {
+                    val rowCopy = arrayListOf<Double>(row)
                 }
             }
         }
 
-        fun crossValidationSplit(dataSet: List<List<Double>>, nFolds: Int): ArrayList<List<Double>> {
+        fun crossValidationSplit(dataSet: List<List<Double>>,
+                                 nFolds: Int): ArrayList<List<Double>> {
             val dataSetSplit = ArrayList<List<Double>>()
             val dataSetCopy = ArrayList<List<Double>>(dataSet)
             val fold_size = (dataSet.size / nFolds)
@@ -85,7 +95,9 @@ class Main() {
             return dataSetSplit
         }
 
-        private fun trainWeights(train: List<List<Double>>, learningRate: Double, nEpoch: Int): List<Double> {
+        private fun trainWeights(train: List<List<Double>>,
+                                 learningRate: Double,
+                                 nEpoch: Int): List<Double> {
             val weights = ArrayList<Double>(train[0].size) // TODO: find how to init array(size = 3)
             for (epoch in 0..nEpoch) {
                 var sumError = 0.0

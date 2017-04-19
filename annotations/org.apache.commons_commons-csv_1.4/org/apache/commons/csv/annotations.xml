@@ -1,0 +1,245 @@
+<root>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withQuoteMode(org.apache.commons.csv.QuoteMode)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser CSVParser(java.io.Reader, org.apache.commons.csv.CSVFormat) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat EXCEL'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat.Predefined RFC4180'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withTrailingDelimiter(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVPrinter print(java.lang.Appendable) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser CSVParser(java.io.Reader, org.apache.commons.csv.CSVFormat, long, long) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter void printRecords(java.sql.ResultSet) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withIgnoreHeaderCase(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.QuoteMode MINIMAL'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.net.URL, java.nio.charset.Charset, org.apache.commons.csv.CSVFormat) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.QuoteMode ALL'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.QuoteMode NONE'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat java.lang.String format(java.lang.Object...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.lang.String, org.apache.commons.csv.CSVFormat) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withCommentMarker(java.lang.Character)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.io.File, java.nio.charset.Charset, org.apache.commons.csv.CSVFormat) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withEscape(java.lang.Character)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withIgnoreHeaderCase()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withAllowMissingColumnNames()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withHeader(java.lang.String...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat INFORMIX_UNLOAD_CSV'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser CSVParser(java.io.Reader, org.apache.commons.csv.CSVFormat) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter void printRecords(java.lang.Iterable&lt;?&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser CSVParser(java.io.Reader, org.apache.commons.csv.CSVFormat, long, long) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter void printRecord(java.lang.Iterable&lt;?&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVRecord java.lang.String get(java.lang.Enum&lt;?&gt;) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withIgnoreEmptyLines(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVParser parse(java.io.Reader) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat.Predefined InformixUnloadCsv'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withNullString(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter CSVPrinter(java.lang.Appendable, org.apache.commons.csv.CSVFormat) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.net.URL, java.nio.charset.Charset, org.apache.commons.csv.CSVFormat) 2'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.io.File, java.nio.charset.Charset, org.apache.commons.csv.CSVFormat)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVParser parse(java.io.Reader)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter java.lang.Appendable getOut()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withIgnoreSurroundingSpaces()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat newFormat(char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withAllowMissingColumnNames(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat.Predefined TDF'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat.Predefined MySQL'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withIgnoreEmptyLines()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withSkipHeaderRecord(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withFirstRecordAsHeader()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withHeader(java.sql.ResultSetMetaData)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser java.util.Iterator&lt;org.apache.commons.csv.CSVRecord&gt; iterator()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat MYSQL'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat.Predefined InformixUnload'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withHeader(java.lang.Class&lt;? extends java.lang.Enum&lt;?&gt;&gt;)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter CSVPrinter(java.lang.Appendable, org.apache.commons.csv.CSVFormat) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat INFORMIX_UNLOAD'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withDelimiter(char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withIgnoreSurroundingSpaces(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat RFC4180'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.QuoteMode NON_NUMERIC'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withTrim(boolean)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withTrailingDelimiter()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat TDF'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withEscape(char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.io.File, java.nio.charset.Charset, org.apache.commons.csv.CSVFormat) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withHeader(java.sql.ResultSet)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withQuote(char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat.Predefined Default'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.lang.String, org.apache.commons.csv.CSVFormat)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter void printRecord(java.lang.Object...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat DEFAULT'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser java.util.List&lt;org.apache.commons.csv.CSVRecord&gt; getRecords()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat.Predefined Excel'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withQuote(java.lang.Character)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withRecordSeparator(char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat void printRecord(java.lang.Appendable, java.lang.Object...) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVPrinter void printRecords(java.lang.Object...) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withCommentMarker(char)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withSkipHeaderRecord()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.net.URL, java.nio.charset.Charset, org.apache.commons.csv.CSVFormat) 0'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.lang.String, org.apache.commons.csv.CSVFormat) 1'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVPrinter print(java.lang.Appendable)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVParser org.apache.commons.csv.CSVParser parse(java.net.URL, java.nio.charset.Charset, org.apache.commons.csv.CSVFormat)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withTrim()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withHeaderComments(java.lang.Object...)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+    <item name='org.apache.commons.csv.CSVFormat org.apache.commons.csv.CSVFormat withRecordSeparator(java.lang.String)'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

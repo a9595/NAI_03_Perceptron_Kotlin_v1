@@ -1,0 +1,5 @@
+<root>
+    <item name='kotlin.reflect.jvm.internal.impl.config.KotlinCompilerVersion VERSION'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>

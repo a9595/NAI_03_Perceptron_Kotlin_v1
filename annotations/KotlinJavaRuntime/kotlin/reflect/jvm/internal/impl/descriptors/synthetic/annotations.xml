@@ -1,0 +1,5 @@
+<root>
+    <item name='kotlin.reflect.jvm.internal.impl.descriptors.synthetic.SyntheticMemberDescriptor T getBaseDescriptorForSynthetic()'>
+        <annotation name='org.jetbrains.annotations.NotNull'/>
+    </item>
+</root>
